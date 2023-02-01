@@ -1,3 +1,39 @@
-.body {
-  min-height: 100vh;
+.header {
+  padding: 1.5em 0;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 1.3em;
+  font-weight: 600;
+  padding: 0;
+}
+
+.tagList {
+  padding: 0;
+  list-style: none;
+}
+
+.tagList > li {
+  display: inline-block;
+  background-color: rgb(173 165 164 / 10%);
+  color: #505050;
+  padding: 6px 10px;
+  border-radius: 2px;
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+
+.reactionCounter {
+  display: flex;
+  align-items: center;
+}
+
+.reactionCounter span {
+  font-size: 18px;
+  margin-left: 5px;
 }

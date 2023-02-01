@@ -4,5 +4,5 @@ export type Post = {
   body: string;
   userId: number;
   tags: string[];
-  reactions: Number;
+  reactions: number;
 };

@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 
-type SlideFadeTransitionProps = {
+type SlideCrossFadeTransition = {
   children: ReactNode;
 };
 
@@ -25,9 +25,9 @@ const variants = {
   },
 };
 
-export default function SlideFadeTransition({
+export default function SlideCrossFadeTransition({
   children,
-}: SlideFadeTransitionProps) {
+}: SlideCrossFadeTransition) {
   const { asPath } = useRouter();
 
   return (

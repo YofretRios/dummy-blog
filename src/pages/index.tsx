@@ -28,7 +28,7 @@ export default function Home({ initialData }: HomeProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <div className={styles.main}>
         {posts.map((post) => (
           <div key={post.id} className={styles.post}>
             <Link href={`/post/${[post.id]}`} scroll={false}>
@@ -37,7 +37,7 @@ export default function Home({ initialData }: HomeProps) {
             <p>{post.body}</p>
           </div>
         ))}
-      </main>
+      </div>
     </>
   );
 }
