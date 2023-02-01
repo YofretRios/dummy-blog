@@ -19,8 +19,8 @@ Small dummy block site built using Next.js, here are the library used in this co
 - [Framer motion](https://www.framer.com/motion/introduction/) - Layout animations
 - [React Icons](https://react-icons.github.io/react-icons) - Icon collection 
 - [Tanstack Query](https://tanstack.com/query/latest/docs/react/overview) - React Query for client-side data fetching
-- [Next.js](https://nextjs.org/) - Underlying react framework
+- [Next.js](https://nextjs.org/) - Underlying react framework using SSR for initial data fetching
 
 ## Live site
 
-- [Dummy Blog](https://polite-starburst-3aa0ef.netlify.app/)
+- [Flat Dummy Blog](https://flat-dummy-blog.netlify.app/)
