@@ -22,3 +22,5 @@ Small dummy block site built using Next.js, here are the library used in this co
 - [Next.js](https://nextjs.org/) - Underlying react framework
 
 ## Live site
+
+- [Dummy Blog](https://polite-starburst-3aa0ef.netlify.app/)
