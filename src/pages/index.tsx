@@ -30,8 +30,10 @@ export default function Home({ initialData }: HomeProps) {
       </Head>
       <main className={styles.main}>
         {posts.map((post) => (
-          <div key={post.id}>
-            <Link href={`/post/${[post.id]}`}>{post.title}</Link>
+          <div key={post.id} className={styles.post}>
+            <Link href={`/post/${[post.id]}`} scroll={false}>
+              <h3>{post.title}</h3>
+            </Link>
             <p>{post.body}</p>
           </div>
         ))}

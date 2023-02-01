@@ -1,9 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { getPost } from "@/services";
-import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import { GetServerSidePropsContext } from "next";
 import { Post } from "@/types/post";
 import useGetPost from "@/hooks/useGetPost";
+import styles from "@/styles/Post.module.css";
 
 type PostProps = {
   initialData: Post;
@@ -27,8 +28,10 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 export default function BlogPost({ initialData, id }: PostProps) {
   const { data: post } = useGetPost(id, initialData);
 
+  console.log(styles);
+
   return (
-    <main>
+    <main className={styles.body}>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
     </main>
