@@ -2,42 +2,37 @@ import { ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 
-type SlideCrossFadeTransition = {
+type CrossFadeTransition = {
   children: ReactNode;
 };
 
 const variants = {
   in: {
     opacity: 1,
-    y: 0,
     transition: {
-      duration: 0.2,
-      delay: 0.3,
+      duration: 0.3,
+      delay: 0.2,
     },
   },
   out: {
     opacity: 0,
-    y: 50,
     transition: {
-      duration: 0.2,
-      delay: 0.3,
+      duration: 0.3,
+      delay: 0.2,
     },
   },
 };
 
-export default function SlideCrossFadeTransition({
+export default function CrossFadeTransition({
   children,
-}: SlideCrossFadeTransition) {
+}: CrossFadeTransition) {
   const { asPath } = useRouter();
 
   return (
-    <AnimatePresence
-      initial={false}
-      mode="popLayout"
-      onExitComplete={() => window.scrollTo(0, 0)}
-    >
+    <AnimatePresence initial={false} mode="popLayout">
       <motion.div
         key={asPath}
+        style={{ overflow: "hidden" }}
         variants={variants}
         animate="in"
         initial="out"

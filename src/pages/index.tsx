@@ -20,7 +20,7 @@ export default function Home({ initialData }: HomeProps) {
   const { data: posts } = useGetPosts(initialData);
 
   return (
-    <>
+    <div className="container">
       <Head>
         <title>Dummy Blog</title>
         <meta name="description" content="Dummy Blog" />
@@ -37,6 +37,6 @@ export default function Home({ initialData }: HomeProps) {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 }

@@ -35,7 +35,7 @@ export default function BlogPost({ initialData, id }: PostProps) {
   };
 
   return (
-    <>
+    <div className="container">
       <Head>
         <title>{post.title}</title>
       </Head>
@@ -56,6 +56,6 @@ export default function BlogPost({ initialData, id }: PostProps) {
         <VscReactions size="30px" />
         <span>{post.reactions}</span>
       </div>
-    </>
+    </div>
   );
 }
