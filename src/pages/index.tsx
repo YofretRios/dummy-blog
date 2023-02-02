@@ -28,9 +28,9 @@ export default function Home({ initialData }: HomeProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.main}>
+      <div className="main">
         {posts.map((post) => (
-          <div key={post.id} className={styles.post}>
+          <div key={post.id} className="post">
             <Link href={`/post/${[post.id]}`} scroll={false}>
               <h3>{post.title}</h3>
             </Link>

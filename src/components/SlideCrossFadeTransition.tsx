@@ -31,7 +31,11 @@ export default function SlideCrossFadeTransition({
   const { asPath } = useRouter();
 
   return (
-    <AnimatePresence initial={false} mode="popLayout">
+    <AnimatePresence
+      initial={false}
+      mode="popLayout"
+      onExitComplete={() => window.scrollTo(0, 0)}
+    >
       <motion.div
         key={asPath}
         variants={variants}

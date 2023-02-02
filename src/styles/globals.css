@@ -20,3 +20,7 @@ h3 {
 button {
   cursor: pointer;
 }
+
+@import './Home.css';
+@import './Layout.css';
+@import './Post.css';

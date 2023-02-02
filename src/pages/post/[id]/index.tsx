@@ -3,7 +3,6 @@ import { getPost } from "@/services";
 import { GetServerSidePropsContext } from "next";
 import { Post } from "@/types/post";
 import useGetPost from "@/hooks/useGetPost";
-import styles from "@/styles/Post.module.css";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { VscReactions } from "react-icons/vsc";
 
@@ -36,20 +35,20 @@ export default function BlogPost({ initialData, id }: PostProps) {
 
   return (
     <>
-      <header className={styles.header}>
-        <button className={styles.backButton} type="button" onClick={goBack}>
+      <header className="header">
+        <button className="backButton" type="button" onClick={goBack}>
           <IoChevronBackOutline size="30px" />
           Back
         </button>
       </header>
       <h3>{post.title}</h3>
       <p>{post.body}</p>
-      <ul className={styles.tagList}>
+      <ul className="tagList">
         {post.tags.map((tag) => (
           <li key={tag}>{tag}</li>
         ))}
       </ul>
-      <div className={styles.reactionCounter}>
+      <div className="reactionCounter">
         <VscReactions size="30px" />
         <span>{post.reactions}</span>
       </div>

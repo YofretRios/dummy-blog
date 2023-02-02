@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import Router from "next/router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Layout from "@/components/Layout";
@@ -14,21 +13,6 @@ const queryClient = new QueryClient({
     },
   },
 });
-
-const routeChange = () => {
-  // Remove media attribute on routeChange to prevent unstyled content
-  // Reference: https://github.com/vercel/next.js/issues/17464
-  const removeMediaAttr = () => {
-    const styleMedia = document.querySelectorAll('style[media="x"]');
-    styleMedia.forEach((el) => {
-      el.removeAttribute("media");
-    });
-  };
-  removeMediaAttr();
-};
-
-Router.events.on("routeChangeComplete", routeChange);
-Router.events.on("routeChangeStart", routeChange);
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
