@@ -5,6 +5,7 @@ import { Post } from "@/types/post";
 import useGetPost from "@/hooks/useGetPost";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { VscReactions } from "react-icons/vsc";
+import Head from "next/head";
 
 type PostProps = {
   initialData: Post;
@@ -35,6 +36,9 @@ export default function BlogPost({ initialData, id }: PostProps) {
 
   return (
     <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
       <header className="header">
         <button className="backButton" type="button" onClick={goBack}>
           <IoChevronBackOutline size="30px" />

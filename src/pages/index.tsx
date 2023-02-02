@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { Post } from "@/types/post";
 import { getPosts } from "@/services";
-import styles from "@/styles/Home.module.css";
 import useGetPosts from "@/hooks/useGetPosts";
 
 type HomeProps = {
@@ -30,12 +29,12 @@ export default function Home({ initialData }: HomeProps) {
       </Head>
       <div className="main">
         {posts.map((post) => (
-          <div key={post.id} className="post">
-            <Link href={`/post/${[post.id]}`} scroll={false}>
+          <Link key={post.id} href={`/post/${[post.id]}`} scroll={false}>
+            <div className="post">
               <h3>{post.title}</h3>
-            </Link>
-            <p>{post.body}</p>
-          </div>
+              <p>{post.body}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </>
