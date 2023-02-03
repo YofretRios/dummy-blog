@@ -11,14 +11,14 @@ const variants = {
     opacity: 1,
     transition: {
       duration: 0.3,
-      delay: 0.2,
+      delay: 0.3,
     },
   },
   out: {
     opacity: 0,
     transition: {
       duration: 0.3,
-      delay: 0.2,
+      delay: 0.3,
     },
   },
 };
