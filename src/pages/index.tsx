@@ -10,7 +10,7 @@ type HomeProps = {
 };
 
 export async function getStaticProps() {
-  // Server fetch initial props
+  // fetch data from the server
   const posts = await getPosts();
 
   return {
@@ -31,7 +31,7 @@ export default function Home({ initialData }: HomeProps) {
       </Head>
       <div className="main">
         {posts.map((post) => (
-          <Link key={post.id} href={`/post/${[post.id]}`} scroll={false} prefetch>
+          <Link key={post.id} href={`/post/${[post.id]}`} scroll={false}>
             <div className="post">
               <h3>{post.title}</h3>
               <p>{post.body}</p>
