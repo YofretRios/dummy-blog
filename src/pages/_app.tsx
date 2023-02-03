@@ -8,7 +8,7 @@ import SlideFadeTransition from "@/components/CrossFadeTransition";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnMount: true,
+      // refetchOnMount: true,
       staleTime: 60000, // 1 minutes to stale time
     },
   },
