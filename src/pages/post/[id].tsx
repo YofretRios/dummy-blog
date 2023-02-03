@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { getPost } from "@/services";
+import { getPost, getPosts } from "@/services";
 import { GetServerSidePropsContext } from "next";
 import { Post } from "@/types/post";
 import useGetPost from "@/hooks/useGetPost";
@@ -8,31 +8,21 @@ import { VscReactions } from "react-icons/vsc";
 import Head from "next/head";
 
 type PostProps = {
-  initialData: Post;
+  initialData: Post | {};
   id: string;
 };
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const id = context.params?.id as string;
-
-  if (id !== undefined || id === "") {
-    const post = await getPost(id);
-
-    return {
-      props: { initialData: post, id },
-    };
-  }
-
-  return { notFound: true };
-}
-
-export default function BlogPost({ initialData, id }: PostProps) {
+export default function BlogPost({ id }: PostProps) {
   const router = useRouter();
-  const { data: post } = useGetPost(id, initialData);
+  const { data: post, isLoading } = useGetPost(id);
 
   const goBack = () => {
     router.back();
   };
+
+  if (isLoading || !post) {
+    return null;
+  }
 
   return (
     <div className="container">
@@ -59,3 +49,9 @@ export default function BlogPost({ initialData, id }: PostProps) {
     </div>
   );
 }
+
+BlogPost.getInitialProps = function (context: GetServerSidePropsContext) {
+  const id = context.query?.id as string;
+
+  return { id };
+};

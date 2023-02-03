@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Post } from "@/types/post";
 import { getPosts } from "@/services";
 import useGetPosts from "@/hooks/useGetPosts";
+import { NextApiResponse } from "next";
 
 type HomeProps = {
   initialData: Post[];
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  // Server fetch initial props
   const posts = await getPosts();
 
   return {
@@ -29,7 +31,7 @@ export default function Home({ initialData }: HomeProps) {
       </Head>
       <div className="main">
         {posts.map((post) => (
-          <Link key={post.id} href={`/post/${[post.id]}`} scroll={false}>
+          <Link key={post.id} href={`/post/${[post.id]}`} scroll={false} prefetch>
             <div className="post">
               <h3>{post.title}</h3>
               <p>{post.body}</p>
