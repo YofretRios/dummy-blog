@@ -5,6 +5,7 @@ type Layout = {
   children: ReactNode;
 };
 
+// Montserrat font from Google Fonts
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Layout({ children }: Layout) {
