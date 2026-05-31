@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Layout({ children }: Layout) {
   return (
-    <main className={`${inter.className} layout`}>{children}</main>
+    <main className={`${inter.className} layout`}>
+      {children}
+      <footer className="footer">
+        Yofret Rios © {new Date().getFullYear()}
+      </footer>
+    </main>
   );
 }

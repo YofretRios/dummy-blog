@@ -2,8 +2,12 @@
   overflow: auto;
 }
 
+.footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
 .container {
-  height: 100vh;
   max-width: 100%;
   padding: 0 15px;
 }
