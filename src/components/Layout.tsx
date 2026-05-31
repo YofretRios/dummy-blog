@@ -1,15 +1,16 @@
 import { ReactNode } from "react";
-import { Inter } from "@next/font/google";
+import { Montserrat } from "@next/font/google";
 
 type Layout = {
   children: ReactNode;
 };
 
-const inter = Inter({ subsets: ["latin"] });
+// Montserrat font from Google Fonts
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Layout({ children }: Layout) {
   return (
-    <main className={`${inter.className} layout`}>
+    <main className={`${montserrat.className} layout`}>
       {children}
       <footer className="footer">
         Yofret Rios © {new Date().getFullYear()}
