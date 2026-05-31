@@ -5,6 +5,7 @@ import { Post } from "@/types/post";
 import useGetPost from "@/hooks/useGetPost";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { VscReactions } from "react-icons/vsc";
+import { VscThumbsup, VscThumbsdown } from "react-icons/vsc";
 import Head from "next/head";
 
 type PostProps = {
@@ -43,8 +44,10 @@ export default function BlogPost({ id }: PostProps) {
         ))}
       </ul>
       <div className="reactionCounter">
-        <VscReactions size="30px" />
-        <span>{post.reactions}</span>
+        <VscThumbsup size="30px" />
+        <span>{post.reactions.likes}</span>
+        <VscThumbsdown size="30px" />
+        <span>{post.reactions.dislikes}</span>
       </div>
     </div>
   );
