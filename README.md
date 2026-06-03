@@ -1,26 +1,37 @@
+# Flat Dummy Blog
+
+A minimal blog built with Next.js, featuring smooth page transitions and server-side rendering. Posts are fetched from a public API and displayed with a clean, flat design.
+
+## Live Site
+
+[dummy-blog.yrios.dev](https://dummy-blog.yrios.dev)
+
+## Tech Stack
+
+| Library                                                                 | Purpose                                            |
+| ----------------------------------------------------------------------- | -------------------------------------------------- |
+| [Next.js](https://nextjs.org/)                                          | React framework with SSR for initial data fetching |
+| [Framer Motion](https://www.framer.com/motion/introduction/)            | Smooth layout animations and page transitions      |
+| [TanStack Query](https://tanstack.com/query/latest/docs/react/overview) | Client-side data fetching and caching              |
+| [React Icons](https://react-icons.github.io/react-icons)                | Icon collection                                    |
+
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Summary
+## Project Structure
 
-Small dummy block site built using Next.js, here are the library used in this codebase
-
-- [Framer motion](https://www.framer.com/motion/introduction/) - Layout animations
-- [React Icons](https://react-icons.github.io/react-icons) - Icon collection 
-- [Tanstack Query](https://tanstack.com/query/latest/docs/react/overview) - React Query for client-side data fetching
-- [Next.js](https://nextjs.org/) - Underlying react framework using SSR for initial data fetching
-
-## Live site
-
-- [Flat Dummy Blog](https://flat-dummy-blog.netlify.app/)
+```
+src/
+├── components/   # Reusable UI components
+├── hooks/        # Data fetching hooks (posts, single post)
+├── pages/        # Next.js file-based routing
+├── services/     # API layer
+├── styles/       # Component and global CSS
+└── types/        # TypeScript type definitions
+```
